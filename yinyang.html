@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .shape{
+            width: 200px;
+            height: 200px;
+            border: 3px solid red;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .redLittle{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            width: 15%;
+            height: 15%;
+            border-radius: 50%;
+            border: 35px solid red;
+            background-color: #fff;
+        }
+
+        .whiteLittle{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+            width: 15%;
+            height: 15%;
+            border-radius: 50%;
+            background-color: red;
+            border: 35px solid #ffffff;
+        }
+
+        .redBig{
+            position:absolute;
+            height: 50%;
+            width: 100%;
+            bottom: 0;
+            background-color: red;
+            z-index: -5;
+        }
+
+        .yinyang{
+            width: 200px;
+            box-sizing: content-box;
+            height: 100px;
+            background: #eee;
+            border-color: red;
+            border-style: solid;
+            border-width: 2px 2px 100px 2px;
+            border-radius: 100%;
+            position: relative;
+        }
+
+        .yinyang::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: #eee;
+            border: 37px solid red;
+            border-radius: 100%;
+            width: 26px;
+            height: 26px;
+            box-sizing: content-box;
+        }
+
+        .yinyang::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: red;
+            border: 37px solid #eee;
+            border-radius: 100%;
+            width: 26px;
+            height: 26px;
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+<body>
+    <h2>多个div绘制阴阳图</h2>
+    <div class="shape">
+        <div class="redLittle"></div>
+        <div class="whiteLittle"></div>
+        <div class="redBig"></div>
+    </div>
+
+    <h2>一个div绘制阴阳图</h2>
+    <div class="yinyang"></div>
+</body>
+</html>
